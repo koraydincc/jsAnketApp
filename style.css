@@ -1,0 +1,19 @@
+body{
+    background-color: #FFF3E2;
+}
+
+
+.form {
+    display: flex;
+    flex-direction: column;
+    padding: 20px; 
+  }
+  
+.form-items {
+    display: grid;
+    grid-template-columns: repeat(3,300px);
+    column-gap: 30px;
+    margin-top: 10px;
+    align-items: center; 
+}
+
