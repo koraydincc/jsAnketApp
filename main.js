@@ -1,6 +1,6 @@
 const newData = [];
 let temp = '';
-let eleman = ''
+let eleman = '';
 let counter = 0;
 let partiler = document.getElementById('partiler');
 let ad = document.getElementById('ad');
@@ -8,8 +8,8 @@ let soyad = document.getElementById('soyad');
 let tc = document.getElementById('tc');
 let veri = document.getElementById('veri');
 let removeBtn = document.getElementById('removeBtn')
-let elemanSayisi = document.getElementById('elemanSayisi')
 let anketSonuclari = document.getElementById('anketSonuclari')
+let userCounter = document.getElementById('userCounter')
 
 let showSettingsContainerItem = document.getElementById('settingsContainer')
 let anketSonucBtn = document.getElementById('sonuc');
@@ -22,7 +22,9 @@ let anketChart = false;
 
 document.getElementById('kaydet').addEventListener('click', function() {
     let secilenParti = partiler.value;
-    let elemanSayisi = 0
+   
+    
+   
     
     
 
@@ -54,19 +56,24 @@ document.getElementById('kaydet').addEventListener('click', function() {
     soyad: soyad.value,
     tc: tc.value,
     secilenParti: secilenParti
+    
    })
+   
+  
+
+ 
 
 
     counter++;
+    
 
  
     //   temp += ` <li>${counter}.Kayıt : Sayın ${tc.value} kimlik numaralı ${ad.value.toUpperCase()} ${soyad.value.toUpperCase()}. Oyunuzu ${secilenParti}'den yana kullandınız.</li>
     //  <button type="button"
     //   onclick="removeBtn2()" id="removeBtn";>Sil</button>` ;
 
-    elemanSayisi++;
 
-    elemanSayisi.innerHTML = `Toplam Üye = ${newData.length}`
+   
 
 
    readList();
@@ -75,6 +82,7 @@ document.getElementById('kaydet').addEventListener('click', function() {
     ad.value = '';
     soyad.value = '';
     tc.value = '';
+    
     
     
 });
@@ -86,7 +94,9 @@ function readList() {
 
   let temp = '';
   for (let i = 0; i < newData.length; i++) {
-    temp += ` <li>${i + 1}.Kayıt : Sayın ${newData[i].tc} kimlik numaralı 
+    
+    temp += `Toplam Üye ${counter}
+          <li>${i + 1}.Kayıt : Sayın ${newData[i].tc} kimlik numaralı 
           ${newData[i].ad.toUpperCase()} ${newData[i].soyad.toUpperCase()}. Oyunuzu ${newData[i].secilenParti}'den yana kullandınız.</li>
      <button type="button"
       onclick="removeBtn2(${i})" id="removeBtn";>Sil</button>
@@ -101,6 +111,7 @@ function readList() {
 }
 
   function removeBtn2(index) {
+    counter--;
     newData.splice(index,1)
     readList();
   }
@@ -155,7 +166,7 @@ function anketSonuclariShow() {
             backgroundColor: [
           'red',
           'blue',
-          'blue',
+          'yellow',
           'blue',
           'blue'
     ],
