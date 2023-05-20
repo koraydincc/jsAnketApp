@@ -57,18 +57,54 @@
             <button id="kaydet" type="button" class="btn btn-outline-success">
               Kaydet
             </button>
-            <button id="sonuc" type="button" class="btn btn-outline-success">
+            <button id="sonuc" type="button" onclick="anketSonuclariShow()" class="btn btn-outline-success">
               Anket Sonuçlarını Görüntüle
+            </button>
+            <button id="removeBtn" type="button" class="btn btn-outline-success">
+              Sil
             </button>
           </div>
         </form>
+        
       </div>
+
+
+      <div style="border:1px solid gray; padding: 5; width:80%; margin: 0 auto; display: none;" id="settingsContainer">
+          <div class="form-items">
+            <select name="u_partiler" id="u_partiler" >
+              <option value="">Lütfen seçin</option>
+              <option value="AKP">AKP</option>
+              <option value="CHP">CHP</option>
+              <option value="MHP">MHP</option>
+              <option value="İYİ PARTİ">İYİ PARTİ</option>
+              <option value="HDP">HDP</option>
+            </select>
+            <button id="kaydet" type="button" onclick="newDataUpdate()" class="btn btn-outline-success">
+              Kaydet
+            </button>
+        
+          </div></div>
       
-      
+      <p id="elemanSayisi">ss</p>
     <div class="temp">
-      <ul id="veri"></ul>
+     
+      <ul id="veri">
+        
+        
+      </ul>
       
     </div>
+
+
+    <div>
+      
+      <div style="width: 80%; margin: 0 auto; display: none;" id="anketSonuclari">
+         <canvas id="myChart"></canvas>
+      </div>
+</div>
   </body>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
   <script src="main.js"></script>
+  <script src="./object.js"></script>
 </html>

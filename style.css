@@ -11,7 +11,7 @@ body{
   
 .form-items {
     display: grid;
-    grid-template-columns: repeat(3,300px);
+    grid-template-columns: repeat(4,220px);
     column-gap: 30px;
     margin-top: 10px;
     align-items: center; 
